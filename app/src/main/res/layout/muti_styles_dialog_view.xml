@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginRight="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginTop="@dimen/multi_dialog_margin_top"
+        android:gravity="center"
+        android:text="@string/dialog_title"
+        android:textColor="@color/multi_dialog_title_default_color"
+        android:textSize="@dimen/multi_dialog_title" />
+
+    <TextView
+        android:id="@+id/dialog_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_title"
+        android:layout_marginLeft="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginRight="@dimen/multi_dialog_margin_left_right"
+        android:gravity="center"
+        android:paddingTop="@dimen/multi_dialog_padding_top"
+        android:text="content"
+        android:textColor="@color/multi_dialog_content_default_color"
+        android:textSize="@dimen/multi_dialog_content" />
+
+
+    <LinearLayout
+        android:id="@+id/progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dialog_msg"
+        android:layout_marginLeft="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginRight="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginTop="@dimen/multi_dialog_margin_top"
+        android:orientation="vertical">
+        <ProgressBar
+            android:id="@+id/dialog_progress"
+            style="@style/setting_clean_cache_progressbar"
+            android:layout_below="@+id/dialog_msg"/>
+        <TextView
+            android:id="@+id/dialog_percent_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right|center_vertical"
+            android:paddingRight="15dp"
+            android:layout_marginTop="8dp"
+            android:text="0%"
+            android:textColor="@color/app_black_txt"
+            android:visibility="visible" />
+    </LinearLayout>
+    <View
+        android:id="@+id/horizontal_split_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/multi_dialog_split"
+        android:layout_marginTop="@dimen/multi_dialog_margin_top"
+        android:layout_below="@+id/progress_layout"
+        android:background="@color/dialog_split_color" />
+    <LinearLayout
+        android:id="@+id/dialog_two_btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontal_split_line"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/dialog_btn1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/multi_dialog_btn_height"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="cancel"
+            android:textColor="@color/dialog_btn_text_color"
+            android:textSize="@dimen/multi_dialog_btn" />
+
+        <View
+            android:layout_width="@dimen/multi_dialog_split"
+            android:layout_height="match_parent"
+            android:background="@color/dialog_split_color" />
+
+        <Button
+            android:id="@+id/dialog_btn2"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/multi_dialog_btn_height"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="commit"
+            android:textColor="@color/dialog_btn_text_color"
+            android:textSize="@dimen/multi_dialog_btn" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/dialog_btn_next"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_below="@+id/dialog_two_btn_container"
+        android:layout_marginLeft="@dimen/multi_dialog_margin_left_right"
+        android:layout_marginRight="@dimen/multi_dialog_margin_left_right"
+        android:layout_weight="1"
+        android:background="@null"
+        android:text="next"
+        android:textColor="@color/dialog_btn_text_color"
+        android:textSize="@dimen/multi_dialog_btn" />
+
+</RelativeLayout>

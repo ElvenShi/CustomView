@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.yaozu.custom.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/toast_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/toast_bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="bottom_toast"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/toast_center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="center_toast"
+                    android:textAllCaps="false" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/loading_dialog"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/toast_layout"
+                android:layout_marginTop="20dp"
+                android:text="不带描述的加载中弹框" />
+
+            <Button
+                android:id="@+id/loading_dialog2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loading_dialog"
+                android:layout_marginTop="20dp"
+                android:text="带描述的加载中弹框" />
+
+            <Button
+                android:id="@+id/anim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="20dp"
+                android:text="Activity 切换动画"
+                android:layout_below="@+id/loading_dialog2"/>
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/anim"
+                android:layout_marginTop="20dp"
+                android:text="有两个按钮，有标题有内容的Dialog"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn1"
+                android:layout_marginTop="20dp"
+                android:text="有两个按钮，没有标题，有内容的Dialog"
+                android:textAllCaps="false" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
