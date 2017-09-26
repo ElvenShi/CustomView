@@ -12,6 +12,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 
 /**
  * @author : Shiyaozu
@@ -34,6 +35,7 @@ public class ProgressActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void initView(){
+        final TextView title = (TextView) findViewById(R.id.title_tv);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         mWebView = (WebView) findViewById(R.id.webview);
         WebSettings mWebSettings = mWebView.getSettings();
@@ -88,6 +90,7 @@ public class ProgressActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onPageFinished(WebView view, String url) {
                 progressBar.setVisibility(View.GONE);
+                title.setText(view.getTitle());
                 super.onPageFinished(view, url);
             }
 
@@ -111,6 +114,18 @@ public class ProgressActivity extends AppCompatActivity implements View.OnClickL
             case R.id.back:
                 finish();
                 break;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mWebView != null){
+            mWebView.removeAllViews();
+            mWebView.clearHistory();
+            mWebView.clearCache(true);
+            mWebView.clearMatches();
+            mWebView.destroy();
         }
     }
 }

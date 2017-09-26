@@ -2,6 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/tools"
     android:background="@android:color/white">
     <RelativeLayout
         android:id="@+id/title"
@@ -16,12 +17,13 @@
             android:paddingLeft="@dimen/space_10"
             android:drawableLeft="@drawable/back_title"/>
         <TextView
+            android:id="@+id/title_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
             android:textSize="@dimen/space_16"
-            android:text="标题"/>
+            tool:text="标题"/>
         <View
             android:id="@+id/split_line"
             android:layout_width="match_parent"
