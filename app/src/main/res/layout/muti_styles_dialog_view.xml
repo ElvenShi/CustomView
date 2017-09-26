@@ -40,7 +40,7 @@
         android:orientation="vertical">
         <ProgressBar
             android:id="@+id/dialog_progress"
-            style="@style/setting_clean_cache_progressbar"
+            style="@style/dialog_progressbar"
             android:layout_below="@+id/dialog_msg"/>
         <TextView
             android:id="@+id/dialog_percent_tv"

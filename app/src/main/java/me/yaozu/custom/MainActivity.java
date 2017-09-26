@@ -62,6 +62,12 @@ public class MainActivity extends AppCompatActivity {
                 showDialog2();
             }
         });
+        findViewById(R.id.btn3).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ProgressActivity.class));
+            }
+        });
     }
 
     private void showLoadingDialog(String message,boolean cancelable){
@@ -69,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
         dialog.setDialogCancelable(cancelable);
         dialog.show();
     }
+
     private void showDialog1(){
         MultiStylesDialog dialog = new MultiStylesDialog(this,"标题","这是一个含有标题和内容，同时带有两个按钮的dialog",null,"取消","确定", MultiStylesDialog.MULTI_DIALOG_THEME.HAS_TITLE_AND_CONTENT_TWO);
         dialog.setCancelable(true);//back键消失

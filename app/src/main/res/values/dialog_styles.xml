@@ -30,7 +30,7 @@
     </style>
 
     <!--进度PorgressBar style-->
-    <style name="setting_clean_cache_progressbar" parent="@android:style/Widget.ProgressBar.Horizontal">
+    <style name="dialog_progressbar" parent="@android:style/Widget.ProgressBar.Horizontal">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">2dp</item>
         <item name="android:progressDrawable">@drawable/setting_clear_progressbar_bg</item>
@@ -64,5 +64,14 @@
         <item name="android:indeterminateBehavior">repeat</item>
         <item name="android:indeterminateDuration">1000</item>
         <item name="android:indeterminateOnly">true</item>
+    </style>
+
+    <!--webview进度条样式-->
+    <style name="WebViewProgress" parent="@android:style/Widget.ProgressBar.Horizontal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1.5dp</item>
+        <item name="android:progressDrawable">@drawable/webview_progressbar_bg</item>
+        <item name="android:max">100</item>
+        <item name="android:progress">0</item>
     </style>
 </resources>

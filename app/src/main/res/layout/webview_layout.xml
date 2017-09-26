@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_45"
+        android:background="@android:color/white">
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="@dimen/space_60"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:paddingLeft="@dimen/space_10"
+            android:drawableLeft="@drawable/back_title"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:textSize="@dimen/space_16"
+            android:text="标题"/>
+        <View
+            android:id="@+id/split_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignParentBottom="true"
+            android:background="#e2e1e1"/>
+    </RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/WebViewProgress"
+        android:layout_below="@+id/title"/>
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:layout_below="@+id/progressBar"/>
+</RelativeLayout>

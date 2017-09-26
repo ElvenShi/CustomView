@@ -77,6 +77,15 @@
                 android:text="有两个按钮，没有标题，有内容的Dialog"
                 android:textAllCaps="false" />
 
+            <Button
+                android:id="@+id/btn3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn2"
+                android:layout_marginTop="20dp"
+                android:text="带进度网页"
+                android:textAllCaps="false" />
+
         </RelativeLayout>
     </ScrollView>
 
