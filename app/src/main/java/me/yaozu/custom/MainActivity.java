@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import me.yaozu.custom.chart.ReportForm2Activity;
+import me.yaozu.custom.chart.ReportFormActivity;
 import me.yaozu.custom.dialog.MultiStylesDialog;
 import me.yaozu.custom.loadingview.LoadingDialog;
 import me.yaozu.custom.toast.ToastUtil;
@@ -66,6 +68,18 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,ProgressActivity.class));
+            }
+        });
+        findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ReportFormActivity.class));
+            }
+        });
+        findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, ReportForm2Activity.class));
             }
         });
     }

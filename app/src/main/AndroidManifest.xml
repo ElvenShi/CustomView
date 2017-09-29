@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="me.yaozu.custom">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,11 +18,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SecondActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".ProgressActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".SecondActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ProgressActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".chart.ReportFormActivity"></activity>
+        <activity android:name=".chart.ReportForm2Activity"></activity>
     </application>
 
 </manifest>
