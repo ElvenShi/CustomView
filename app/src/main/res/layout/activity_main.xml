@@ -92,7 +92,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btn3"
                 android:layout_marginTop="20dp"
-                android:text="图表"
+                android:text="图表1"
                 android:textAllCaps="false" />
 
             <Button
@@ -101,7 +101,16 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/btn4"
                 android:layout_marginTop="20dp"
-                android:text="图表"
+                android:text="图表2"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/btn6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btn5"
+                android:layout_marginTop="20dp"
+                android:text="PDF预览"
                 android:textAllCaps="false" />
 
         </RelativeLayout>

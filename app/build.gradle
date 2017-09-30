@@ -24,9 +24,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    //    compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.github.PhilJay:MPAndroidChart:v3.0.2'
-//    compile 'com.github.PhilJay:MPAndroidChart:v2.2.5'
+    compile 'com.joanzapata.pdfview:android-pdfview:1.0.4@aar'//只支持加载本地pdf文件，不支持网络预览
+    compile 'es.voghdev.pdfviewpager:library:1.0.2'//支持加载本地和网络pdf文件
     testCompile 'junit:junit:4.12'
 }

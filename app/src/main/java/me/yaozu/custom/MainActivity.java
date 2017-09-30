@@ -10,9 +10,10 @@ import me.yaozu.custom.chart.ReportForm2Activity;
 import me.yaozu.custom.chart.ReportFormActivity;
 import me.yaozu.custom.dialog.MultiStylesDialog;
 import me.yaozu.custom.loadingview.LoadingDialog;
+import me.yaozu.custom.pdf.PDFPreviewActivity;
 import me.yaozu.custom.toast.ToastUtil;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,66 +23,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView(){
-        findViewById(R.id.btn1).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog1();
-            }
-        });
-        findViewById(R.id.toast_bottom).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtil.showBottomToast(MainActivity.this,"bottom toast");
-            }
-        });
-        findViewById(R.id.toast_center).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ToastUtil.showCenterToast(MainActivity.this,"center toast");
-            }
-        });
-        findViewById(R.id.anim).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,SecondActivity.class));
-            }
-        });
-        findViewById(R.id.loading_dialog).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showLoadingDialog(null,false);
-            }
-        });
-        findViewById(R.id.loading_dialog2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               showLoadingDialog("加载中...",true);
-            }
-        });
-        findViewById(R.id.btn2).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showDialog2();
-            }
-        });
-        findViewById(R.id.btn3).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ProgressActivity.class));
-            }
-        });
-        findViewById(R.id.btn4).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,ReportFormActivity.class));
-            }
-        });
-        findViewById(R.id.btn5).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, ReportForm2Activity.class));
-            }
-        });
+        findViewById(R.id.btn1).setOnClickListener(this);
+        findViewById(R.id.toast_bottom).setOnClickListener(this);
+        findViewById(R.id.toast_center).setOnClickListener(this);
+        findViewById(R.id.anim).setOnClickListener(this);
+        findViewById(R.id.loading_dialog).setOnClickListener(this);
+        findViewById(R.id.loading_dialog2).setOnClickListener(this);
+        findViewById(R.id.btn2).setOnClickListener(this);
+        findViewById(R.id.btn3).setOnClickListener(this);
+        findViewById(R.id.btn4).setOnClickListener(this);
+        findViewById(R.id.btn5).setOnClickListener(this);
+        findViewById(R.id.btn6).setOnClickListener(this);
     }
 
     private void showLoadingDialog(String message,boolean cancelable){
@@ -132,5 +84,45 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         dialog.show();dialog.setBtn1Text("取消").setBtn2Text("确定");
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.toast_bottom:
+                ToastUtil.showBottomToast(MainActivity.this,"bottom toast");
+                break;
+            case R.id.toast_center:
+                ToastUtil.showCenterToast(MainActivity.this,"center toast");
+                break;
+            case R.id.anim:
+                startActivity(new Intent(MainActivity.this,SecondActivity.class));
+                break;
+            case R.id.loading_dialog:
+                showLoadingDialog(null,false);
+                break;
+            case R.id.loading_dialog2:
+                showLoadingDialog("加载中...",true);
+                break;
+            case R.id.btn1:
+                showDialog1();
+                break;
+            case R.id.btn2:
+                showDialog2();
+                break;
+            case R.id.btn3:
+                startActivity(new Intent(MainActivity.this,ProgressActivity.class));
+                break;
+            case R.id.btn4:
+                startActivity(new Intent(MainActivity.this,ReportFormActivity.class));
+                break;
+            case R.id.btn5:
+                startActivity(new Intent(MainActivity.this, ReportForm2Activity.class));
+                break;
+
+            case R.id.btn6:
+                startActivity(new Intent(MainActivity.this, PDFPreviewActivity.class));
+                break;
+        }
     }
 }

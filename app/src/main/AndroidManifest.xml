@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="me.yaozu.custom">
 
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="25"  tools:overrideLibrary="es.voghdev.pdfviewpager.library"/>
+
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -25,8 +32,9 @@
             android:name=".ProgressActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".chart.ReportFormActivity"></activity>
-        <activity android:name=".chart.ReportForm2Activity"></activity>
+        <activity android:name=".chart.ReportFormActivity" />
+        <activity android:name=".chart.ReportForm2Activity" />
+        <activity android:name=".pdf.PDFPreviewActivity"></activity>
     </application>
 
 </manifest>
